@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+<TextView 
+    
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Payment"
+        android:layout_marginRight="80dp"
+        android:textSize="30sp" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Name"
+                android:textColor="#00FFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/fname_et"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/group_top_black"
+                android:ems="9"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:textColor="#00FFFF"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/lname_et"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/group_top_black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Card Number"
+                android:textColor="#00FFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/card#"
+                android:layout_width="wrap_content"
+                android:textColor="#00FFFF"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/group_top_black"
+                android:ems="9" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exp Date"
+                android:textColor="#00FFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/exp_date"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/group_top_black"
+                android:ems="9" />
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Security No"
+                android:textColor="#00FFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/security"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/group_top_black"
+                android:ems="9" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pay"
+        android:layout_alignBottom="@+id/pay"
+        android:layout_alignRight="@+id/tableLayout1"
+        android:layout_marginRight="56dp"
+        android:text="Go Back"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/go_back"
+        android:text="Pay"
+        android:textColor="@android:color/black" />
+
+    </RelativeLayout>

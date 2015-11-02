@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+     android:background="@drawable/bg"
     android:padding="10dp" >
 <TextView 
     
@@ -73,11 +74,12 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/card#"
+                android:id="@+id/card"
                 android:layout_width="wrap_content"
                 android:textColor="#00FFFF"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
+                android:inputType="number"
                 android:background="@drawable/group_top_black"
                 android:ems="9" />
         </TableRow>
@@ -100,7 +102,11 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/group_top_black"
-                android:ems="9" />
+                android:ems="9" >
+
+                <requestFocus />
+            </EditText>
+
         </TableRow>
         
         <TableRow
@@ -120,31 +126,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
+                android:inputType="number"
                 android:background="@drawable/group_top_black"
                 android:ems="9" />
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/go_back"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/pay"
-        android:layout_alignBottom="@+id/pay"
-        android:layout_alignRight="@+id/tableLayout1"
-        android:layout_marginRight="56dp"
-        android:text="Go Back"
-        android:textColor="@android:color/black" />
+        android:layout_alignLeft="@+id/tableLayout1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp" >
+       
 
     <Button
-        android:id="@+id/pay"
-        android:layout_width="wrap_content"
+        android:id="@+id/payment_pay"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tableLayout1"
-        android:layout_marginRight="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_weight="0.5"
         android:layout_toLeftOf="@+id/go_back"
         android:text="Pay"
         android:textColor="@android:color/black" />
+     <Button
+        android:id="@+id/payment_go_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+       android:layout_marginLeft="10dp"
+        android:text="Go Back"
+        android:textColor="@android:color/black" />
+
+    </LinearLayout>
 
     </RelativeLayout>

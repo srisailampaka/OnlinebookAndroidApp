@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+     android:background="@drawable/bg"
     android:padding="10dp" >
 
     <TextView
@@ -121,10 +122,9 @@
         android:id="@+id/gobacktologin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/login_dl"
-        android:layout_alignBottom="@+id/login_dl"
+        android:layout_alignBaseline="@+id/register"
+        android:layout_alignBottom="@+id/register"
         android:layout_alignRight="@+id/tableLayout1"
-        android:layout_marginRight="25dp"
         android:text="Go Back To Login"
         android:textColor="@android:color/black" />
 

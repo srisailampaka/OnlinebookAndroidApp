@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="@drawable/bg"
+    android:background="@drawable/bg"
     android:padding="10dp" >
 
     <TextView
@@ -76,13 +76,13 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/email_et"
                 android:layout_width="wrap_content"
-                android:textColor="#00FFFF"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/group_top_black"
-                android:ems="9" />
+                android:ems="9"
+                android:textColor="#00FFFF" />
         </TableRow>
 
         <TableRow
@@ -105,27 +105,83 @@
                 android:background="@drawable/group_top_black"
                 android:ems="9" />
         </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UserName"
+                android:textColor="#00FFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/username_et"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/group_top_black"
+                android:ems="9" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="#00FFFF"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/password_et"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/group_top_black"
+                android:ems="9" />
+        </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tableLayout1"
-        android:layout_below="@+id/tableLayout1"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="39dp"
-        android:text="Register"
-        android:textColor="@android:color/black" />
+        android:layout_below="@+id/tableLayout1" >
 
-    <Button
-        android:id="@+id/gobacktologin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/register"
-        android:layout_alignBottom="@+id/register"
-        android:layout_alignRight="@+id/tableLayout1"
-        android:text="Go Back To Login"
-        android:textColor="@android:color/black" />
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tableLayout1"
+            android:layout_marginLeft="17dp"
+            android:text="Register"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tableLayout1"
+            android:layout_below="@+id/tableLayout1"
+            android:layout_marginLeft="17dp"
+            android:text="Delete"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/gobacktologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/register"
+            android:layout_alignBottom="@+id/register"
+            android:layout_alignRight="@+id/tableLayout1"
+            android:text="Go Back"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
 
 </RelativeLayout>

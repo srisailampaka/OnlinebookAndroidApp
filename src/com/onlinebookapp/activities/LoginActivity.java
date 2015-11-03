@@ -2,7 +2,10 @@ package com.onlinebookapp.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.CursorIndexOutOfBoundsException;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -14,11 +17,13 @@ public class LoginActivity extends Activity {
 	private EditText editid;
 	private EditText editpassword;
 	private String username, password;
+	SharedPreferences.Editor editor;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_studentlogin);
+		 editor = getSharedPreferences("univer", MODE_PRIVATE).edit();
 		editid = (EditText) findViewById(R.id.fname_et);
 		editpassword = (EditText) findViewById(R.id.pwd_et);
 
@@ -29,6 +34,7 @@ public class LoginActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
+				intent.putExtra("id", 0);
 				startActivity(intent);
 
 			}
@@ -38,16 +44,26 @@ public class LoginActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				username = editid.getText().toString().trim();
-				password = editpassword.getText().toString().trim();
-				if (username.equalsIgnoreCase("book") && password.equalsIgnoreCase("12345")) {
-					Intent intent = new Intent(LoginActivity.this, MainActvity.class);
-					startActivity(intent);
-					editid.setText("");
-					editpassword.setText("");
-				} else {
-					Toast.makeText(getApplicationContext(), "Pleae check the credentials", Toast.LENGTH_LONG).show();
+				// TODO Auto-generated method stub
+				try {
+					
+					Register student = (new DatabaseHelper(getApplicationContext()))
+							.getStudentLogin(editid.getText().toString(), editpassword.getText().toString());
+					if (student != null) {
+						editor.putString("id", student.getSno());
+						 editor.commit();
+						 
+						 editid.setText("");
+						 editpassword.setText("");
+						Intent intent = new Intent(LoginActivity.this, MainActvity.class);
+						startActivity(intent);
+					} else {
+						Toast.makeText(getApplicationContext(), "plese check the login Details", Toast.LENGTH_LONG).show();
+					}
+				} catch (CursorIndexOutOfBoundsException e) {
+					Toast.makeText(getApplicationContext(), "plese check the login Details", Toast.LENGTH_LONG).show();
 				}
+				
 			}
 		});
 

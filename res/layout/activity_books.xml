@@ -4,6 +4,24 @@
     android:layout_height="match_parent"
      android:background="@drawable/bg"
     android:orientation="vertical" >
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp" />
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/books"
@@ -13,7 +31,7 @@
         android:textSize="25sp"
         android:layout_marginLeft="20dp"
         android:textStyle="bold"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
